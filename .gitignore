@@ -63,3 +63,6 @@ nunit-*.xml
 *.userosscache
 *.sln.docstates
 .DS_Store
+
+# Local development credentials
+/src/CarIdentifier.Api/appsettings.Development.json
