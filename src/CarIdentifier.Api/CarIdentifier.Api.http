@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:5000
+@priceSearchJobId = replace-with-PriceSearchJobId-from-identification-response
+
+### Identify a car and automatically queue a price-search job
+POST {{baseUrl}}/api/cars/identify
+Content-Type: multipart/form-data; boundary=CarImageBoundary
+
+--CarImageBoundary
+Content-Disposition: form-data; name="Image"; filename="car.jpg"
+Content-Type: image/jpeg
+
+< ./car.jpg
+--CarImageBoundary--
+
+### Get the current price-search job status and result
+GET {{baseUrl}}/api/cars/price-jobs/{{priceSearchJobId}}
